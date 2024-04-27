@@ -1,0 +1,64 @@
+programa
+{
+	
+real codigoAdm =154.0
+	cadeia login[100],IDL,senha[100],IDS
+	inteiro opcao=0,usuarios=0
+	logico loginc,logins
+
+	funcao menu(){
+		escreva("Deseja\n")
+		escreva("1 - Logar\n")
+		escreva("2 - Registrar\n")
+		escreva("3 - Sair\n")
+		leia(opcao)
+	}
+
+	funcao registrar(){
+		escreva("Digite seu úsuario:\n")
+		leia(login[usuarios])
+		escreva("Digite sua senha:\n")
+		leia(senha[usuarios])
+		usuarios++
+	}
+	funcao logar(){
+		escreva("Digite seu nome de úsuario\n")
+		leia(IDL)
+		escreva("Digite sua senha\n")
+		leia(IDS)
+		para(inteiro c = 0;IDL == login[c] ou c > usuarios;c++){
+			se(IDL == login[c]){
+				loginc = verdadeiro
+			}
+			se(c>usuarios e IDL != login[c]){
+				loginc = falso
+			}
+		}
+		para(inteiro i = 0;IDS == senha[i] ou  i > usuarios;i++){
+			se(IDS == login[i]){
+				logins = verdadeiro
+			}
+			se(i>usuarios e IDL != senha[i]){
+				logins = falso
+			}
+		}
+			se(loginc e logins == verdadeiro){
+				escreva("Logou\n")
+			}
+			senao(escreva("Login ou Senha invalido(a)\n"))
+	}
+	
+	funcao inicio()
+	{
+		menu()
+		enquanto(opcao!=3){
+			se(opcao==1){
+				logar()
+			}
+			se(opcao==2){
+				registrar()
+			}
+			menu()
+		}
+	}
+}
