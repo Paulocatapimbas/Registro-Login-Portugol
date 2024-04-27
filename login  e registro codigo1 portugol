@@ -1,7 +1,5 @@
 programa
 {
-	
-	real codigoAdm =154.0
 	cadeia login[100],senha[100]
 	cadeia IDL,IDS
 	inteiro opcao=0,usuarios=0
